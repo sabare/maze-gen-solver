@@ -1,0 +1,161 @@
+:root {
+    --clr-wall: #1B2430;
+    --clr-sidebar: #393E46;
+    --clr-light: #e8e8e8;
+    --clr-hover: #ddd;
+    --clr-click: #aaa;
+    width: 100%;
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font: 1em Arial;
+}
+
+body {
+    background-color: var(--clr-wall);
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+canvas {
+    background-color: var(--clr-sidebar);
+    aspect-ratio: 1 / 1;
+    margin: 2em auto;
+    overflow: scroll;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 200px;
+    min-width: 200px;
+}
+
+.sidebar {
+    background-color: var(--clr-sidebar);
+    height: 100%;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+}
+
+.clicked {
+    background-color: var(--clr-click) !important;
+}
+
+#tab_selector {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.tab_button {
+    border-radius: 0px;
+    margin: 0px !important;
+    width: 33%;
+    border: 1px solid var(--clr-sidebar);
+    background-color: white;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.tab_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-wall);
+    width: 75%;
+    border-radius: 15px;
+    padding: 15px 5px;
+    margin: auto;
+    box-shadow: -3px -3px var(--clr-light);
+}
+
+.tab_content > *, #grid_size_input {
+    width: 100px !important;
+    margin: 5px;
+}
+
+.tab_content button, .editLabel {
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: none;
+}
+
+#grid_size_input {
+    width: 50px;
+    margin: 5px 0px;
+}
+
+#grid_size_input_label {
+    color: white;
+}
+
+#search_tab {
+    display: flex;
+}
+
+#new_maze_tab, #edit_tab {
+    display: none;
+}
+
+#editLabel * {
+    cursor: pointer;
+}
+
+button, .editLabel {
+    user-select: none;
+    cursor: pointer;
+}
+
+button:hover, .editLabel:hover {
+    background-color: var(--clr-hover);
+}
+
+button:active, .editLabel:active {
+    background-color: var(--clr-click);
+}
+
+@media (max-width: 900px) {
+    body {
+        flex-direction: column;
+    }
+    .controls {
+        flex-direction: row;
+        width: 100%;
+        height: 130px;
+        min-height: 130px;
+    }
+    .sidebar {
+        flex-direction: row;
+        align-items: center;
+        width: 75%;
+    }
+    .tab_content {
+        flex-direction: row;
+    }
+    .tab_content * {
+        width: auto;
+        margin: 5px;
+    }
+    .tab_button {
+        width: 100%;
+        height: 33%;
+    }
+    #tab_selector {
+        height: 100%;
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+}

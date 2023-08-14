@@ -1,0 +1,11 @@
+{
+  "name": "advanced-maze-solver",
+  "version": "1.0.0",
+  "description": "searches a 2d grid maze with graph search algorithms like breadth-first, depth-first, and A*, also edit mazes and generate mazes with DFS, Prim's, and Kruskals.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kai Blahnik",
+  "license": "MIT"
+}
